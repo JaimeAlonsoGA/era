@@ -36,7 +36,8 @@ public class Environment {
 		return generatedName;
 	}
 	
-
+	final public static int CATASTROPHE = 5;
+	final public static int MILLIONYEARS = 1;
 	
 	public static void main(String[] args) {
 		
@@ -57,7 +58,7 @@ public class Environment {
 			organism.add(new Organism(numberGenerator(4), nameGenerator()));
 		}
 		
-		for (int i = 0; i < organism.size(); i++) {
+		for (int i = 0; i < Organism.getOrganismsAlive(); i++) {
 			organism.get(i).getOrganism();
 		}
 		
@@ -115,15 +116,15 @@ public class Environment {
 									if(!organism.get(i).isAlive()) System.out.println('\n' + organism.get(i).getName() + " has died");
 									System.out.print("--------------------");
 									
+									TimeUnit.SECONDS.sleep(1);
 							}
-							TimeUnit.SECONDS.sleep(1);
 							
 						}
 						
-						endOfTheWorld += 2;
+						endOfTheWorld += MILLIONYEARS;
 						
 					} 
-					while(endOfTheWorld != 40);
+					while(endOfTheWorld != CATASTROPHE);
 					
 					System.out.print('\n' + "-*-*-*-*-*-*-*-*-*-*-*-*");
 					Organism.getEcosystem();
@@ -136,11 +137,12 @@ public class Environment {
 				}
 				
 			}
-			else 
-			{
-				System.out.println("Write 'era' to begin or 'end' to exit");
-				state = input.next();
-			}
+			// else 
+			// {
+			// 	System.out.println("Write 'era' to begin or 'end' to exit");
+			// 	state = input.next();
+			// }
+			state = "end";
 		}
 		while(state.equals(end));
 		

@@ -4,7 +4,7 @@ public class Organism {
 	
 	final private double AUREO = 1.618034;
 	
-	final public static int INITPOPULATION = 8;
+	final public static int INITPOPULATION = 5;
 	private static String [] ecosystem = {"warm", "cold", "humid", "water"};
 	private static int organismsCounter;
 	private static int organismsAlive;
@@ -73,19 +73,23 @@ public class Organism {
 		return organismsCounter;
 	}
 	
-	public boolean isAlive() {
+	public boolean isAlive() 
+	{
 		return isAlive;
 	}
 	
-	public void setAlive(boolean isAlive) {
+	public void setAlive(boolean isAlive) 
+	{
 		this.isAlive = isAlive;
 	}
 	
-	public static int getDanger() {
+	public static int getDanger() 
+	{
 		return danger;
 	}
 	
-	public static void setDanger(int danger) {
+	public static void setDanger(int danger) 
+	{
 		Organism.danger = danger;
 	}
 	
